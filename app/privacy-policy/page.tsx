@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
             <p style={{ marginBottom: '16px' }}>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
             
             <h3 style={{ fontSize: '1.3rem', marginTop: '24px', marginBottom: '12px', color: 'var(--purple)' }}>Contact Us</h3>
-            <p>If you have any questions about this Privacy Policy, please contact us at contact@nexgrowdigital.com</p>
+            <p>If you have any questions about this Privacy Policy, please contact us at contact.nexgrowdigital@gmail.com</p>
           </div>
         </div>
       </main>
@@ -78,7 +78,7 @@ export default function PrivacyPolicy() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul className="contact-list">
-                <li><strong>Email:</strong> contact@nexgrowdigital.com</li>
+                <li><strong>Email:</strong> contact.nexgrowdigital@gmail.com</li>
                 <li><strong>Whatsapp:</strong> +1 (365) 276-8648</li>
                 <li><strong>Hours:</strong> Mon-Sat, 9:00 AM - 7:00 PM</li>
               </ul>

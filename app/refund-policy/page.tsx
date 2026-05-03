@@ -38,7 +38,7 @@ export default function RefundPolicy() {
             <p style={{ marginBottom: '16px' }}>Fees paid to third parties (such as domain registrations, hosting services, advertising platforms) are non-refundable as these are pass-through costs.</p>
             
             <h3 style={{ fontSize: '1.3rem', marginTop: '24px', marginBottom: '12px', color: 'var(--purple)' }}>Refund Requests</h3>
-            <p>To request a refund consideration, please contact us at contact@nexgrowdigital.com with your project details and reason for the request. Each case will be reviewed individually.</p>
+            <p>To request a refund consideration, please contact us at contact.nexgrowdigital@gmail.com with your project details and reason for the request. Each case will be reviewed individually.</p>
           </div>
         </div>
       </main>
@@ -78,7 +78,7 @@ export default function RefundPolicy() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul className="contact-list">
-                <li><strong>Email:</strong> contact@nexgrowdigital.com</li>
+                <li><strong>Email:</strong> contact.nexgrowdigital@gmail.com</li>
                 <li><strong>Whatsapp:</strong> +1 (365) 276-8648</li>
                 <li><strong>Hours:</strong> Mon-Sat, 9:00 AM - 7:00 PM</li>
               </ul>

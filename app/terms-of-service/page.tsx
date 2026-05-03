@@ -41,7 +41,7 @@ export default function TermsOfService() {
             <p style={{ marginBottom: '16px' }}>Nexgrow Digital shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our services.</p>
             
             <h3 style={{ fontSize: '1.3rem', marginTop: '24px', marginBottom: '12px', color: 'var(--purple)' }}>Contact Us</h3>
-            <p>For questions about these Terms of Service, contact us at contact@nexgrowdigital.com</p>
+            <p>For questions about these Terms of Service, contact us at contact.nexgrowdigital@gmail.com</p>
           </div>
         </div>
       </main>
@@ -81,7 +81,7 @@ export default function TermsOfService() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul className="contact-list">
-                <li><strong>Email:</strong> contact@nexgrowdigital.com</li>
+                <li><strong>Email:</strong> contact.nexgrowdigital@gmail.com</li>
                 <li><strong>Whatsapp:</strong> +1 (365) 276-8648</li>
                 <li><strong>Hours:</strong> Mon-Sat, 9:00 AM - 7:00 PM</li>
               </ul>
