@@ -669,7 +669,7 @@ export default function Home() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul className="contact-list">
-                <li><strong>Email:</strong> contact@nexgrowdigital.com</li>
+                <li><strong>Email:</strong> contact.nexgrowdigital@gmail.com</li>
                 <li><strong>Whatsapp:</strong> +1 (365) 276-8648</li>
                 <li><strong>Hours:</strong> Mon-Sat, 9:00 AM - 7:00 PM</li>
               </ul>

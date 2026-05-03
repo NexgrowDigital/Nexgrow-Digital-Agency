@@ -215,7 +215,7 @@ export default function Appointment() {
               <li><span className="dot"></span><span>We send a project roadmap and quote within 48 hours.</span></li>
             </ul>
             <p className="note">Your information is secure. We'll never share or sell your data.</p>
-            <p className="contact">Prefer email?<br /><a href="mailto:contact@nexgrowdigital.com">contact@nexgrowdigital.com</a></p>
+            <p className="contact">Prefer email?<br /><a href="mailto:contact.nexgrowdigital@gmail.com">contact.nexgrowdigital@gmail.com</a></p>
             <p className="contact">Chat with us on WhatsApp:<br /><a href="https://wa.me/13652768648" target="_blank" rel="noopener noreferrer">+1 (365) 276-8648</a></p>
           </aside>
         </section>
@@ -256,7 +256,7 @@ export default function Appointment() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul className="contact-list">
-                <li><strong>Email:</strong> contact@nexgrowdigital.com</li>
+                <li><strong>Email:</strong> contact.nexgrowdigital@gmail.com</li>
                 <li><strong>Whatsapp:</strong> +1 (365) 276-8648</li>
                 <li><strong>Hours:</strong> Mon-Sat, 9:00 AM - 7:00 PM</li>
               </ul>

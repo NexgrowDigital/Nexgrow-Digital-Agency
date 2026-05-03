@@ -226,7 +226,7 @@ export default function FAQs() {
             <div className="footer-col">
               <h4>Contact</h4>
               <ul>
-                <li><a href="mailto:contact@nexgrowdigital.com">contact@nexgrowdigital.com</a></li>
+                <li><a href="mailto:contact.nexgrowdigital@gmail.com">contact.nexgrowdigital@gmail.com</a></li>
                 <li><a href="https://wa.me/13652768648" target="_blank" rel="noopener noreferrer">+1 (365) 276-8648</a></li>
                 <li>Available 24/7 for your queries</li>
               </ul>
