@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexgrow Digital | We Grow Businesses Digitally</title>
+  <meta name="description" content="Nexgrow Digital - Full service digital agency helping businesses grow online." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --surface-strong: #ffffff;
+      --text: #1a1a1a;
+      --muted: #4a5b52;
+      --blue: #7ec8a4;
+      --purple: #2d8653;
+      --success: #22c55e;
+      --warning: #ffd166;
+      --border: rgba(45, 134, 83, 0.22);
+      --radius: 18px;
+      --gradient: linear-gradient(120deg, var(--blue), var(--purple));
+      --shadow-glow: 0 0 18px rgba(126, 200, 164, 0.36), 0 0 32px rgba(45, 134, 83, 0.26);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, 92vw);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 104px 0;
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
+    }
+
+    #services,
+    #stats,
+    #testimonials,
+    #appointment {
+      background: #f0faf5;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.2vw, 2.85rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 14px;
+      letter-spacing: -0.2px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 46px;
+      font-size: clamp(0.98rem, 1.8vw, 1.1rem);
+    }
+
+    .gradient-text {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 24px rgba(31, 60, 44, 0.08);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 22px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease, color 0.28s ease;
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: var(--gradient);
+      box-shadow: var(--shadow-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(45, 134, 83, 0.22);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: #f5f5f5;
+      border: 1px solid rgba(45, 134, 83, 0.24);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      background: #f0faf5;
+      box-shadow: 0 10px 20px rgba(45, 134, 83, 0.14);
+    }
+
+    .site-loader {
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 50% 42%, #e8f7ef 0%, #ffffff 65%);
+      z-index: 2000;
+      display: grid;
+      place-items: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .site-loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-logo {
+      font-size: clamp(2rem, 6vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      color: #1f4e34;
+      text-shadow: 0 0 16px rgba(126, 200, 164, 0.7), 0 0 24px rgba(45, 134, 83, 0.45);
+      animation: pulseLogo 1.4s ease-in-out infinite;
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.04); opacity: 0.8; }
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+      border-bottom: 1px solid rgba(45, 134, 83, 0.12);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(26, 61, 43, 0.08);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      border-color: rgba(45, 134, 83, 0.18);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 26px rgba(26, 61, 43, 0.12);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .logo {
+      font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+      font-weight: 900;
+      color: #1e5e3d;
+      text-shadow: 0 0 12px rgba(126, 200, 164, 0.7);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: #254536;
+      font-weight: 600;
+      font-size: 0.95rem;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      border-radius: 6px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.28s ease;
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      padding: 10px 18px;
+      font-size: 0.88rem;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      border: 1px solid rgba(45, 134, 83, 0.28);
+      background: #ffffff;
+      color: #24563b;
+      font-size: 1.2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      position: relative;
+      padding-top: 90px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffffff 0%, #f7fcf9 100%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      justify-self: end;
+    }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid rgba(45, 134, 83, 0.2);
+      box-shadow: 0 18px 44px rgba(126, 200, 164, 0.32);
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      opacity: 1;
+      transform: translateY(0);
+      animation: heroImageFade 0.9s ease-out both;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes heroImageFade {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-floating-card {
+      position: absolute;
+      left: -16px;
+      bottom: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #24563b;
+      border-radius: 12px;
+      padding: 10px 14px;
+      border: 1px solid rgba(45, 134, 83, 0.2);
+      box-shadow: 0 10px 24px rgba(26, 61, 43, 0.12);
+      font-size: 0.86rem;
+      font-weight: 700;
+      animation: floatCard 3s ease-in-out infinite;
+    }
+
+    .hero-floating-card .check-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #2d8653;
+      color: #ffffff;
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 5.4vw, 4rem);
+      line-height: 1.08;
+      margin-bottom: 16px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .typing-target {
+      display: inline-block;
+      border-right: none;
+      padding-right: 8px;
+      min-height: 1.2em;
+      text-shadow: none;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      margin-bottom: 30px;
+      max-width: 640px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 10px;
+      background: #edf8f2;
+      border: 1px solid rgba(45, 134, 83, 0.24);
+      color: #24563b;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .hero-trust-item {
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid rgba(45, 134, 83, 0.16);
+      color: #335743;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .trust-strip {
+      padding: 20px 0;
+      background: #f4fbf7;
+      border-top: 1px solid rgba(45, 134, 83, 0.12);
+      border-bottom: 1px solid rgba(45, 134, 83, 0.12);
+    }
+
+    .trust-strip-inner {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .trust-strip-label {
+      color: #2f5c46;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+
+    .trust-strip-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .trust-logo {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid rgba(45, 134, 83, 0.18);
+      color: #335743;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .scroll-down {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      width: 35px;
+      height: 56px;
+      border: 2px solid rgba(45, 134, 83, 0.45);
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      z-index: 4;
+      background: rgba(126, 200, 164, 0.14);
+      animation: bounce 1.9s ease-in-out infinite;
+    }
+
+    .scroll-down span {
+      width: 5px;
+      height: 11px;
+      border-radius: 99px;
+      background: #2d8653;
+      animation: scrollDot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    @keyframes scrollDot {
+      0% { transform: translateY(-6px); opacity: 0; }
+      30% { opacity: 1; }
+      100% { transform: translateY(8px); opacity: 0; }
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      padding: 22px 18px 20px;
+      position: relative;
+      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+      min-height: 205px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(45, 134, 83, 0.5);
+      box-shadow: 0 14px 28px rgba(126, 200, 164, 0.24), 0 12px 30px rgba(45, 134, 83, 0.16);
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      margin-bottom: 14px;
+      background: linear-gradient(140deg, rgba(126, 200, 164, 0.2), rgba(45, 134, 83, 0.12));
+      border: 1px solid rgba(45, 134, 83, 0.28);
+      box-shadow: none;
+    }
+
+    .service-card h3 {
+      font-size: 1.03rem;
+      margin-bottom: 8px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .portfolio-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .filter-btn {
+      background: #f5f5f5;
+      color: #264c39;
+      border: 1px solid rgba(45, 134, 83, 0.24);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--gradient);
+      border-color: transparent;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .portfolio-grid {
+      columns: 3 280px;
+      column-gap: 16px;
+    }
+
+    .portfolio-card {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative;
+      border-radius: 12px;
+      border: 1px solid rgba(45, 134, 83, 0.2);
+      background: #ffffff;
+    }
+
+    .portfolio-image {
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: scale(1);
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-card:nth-child(2) .portfolio-image,
+    .portfolio-card:nth-child(5) .portfolio-image {
+      height: 280px;
+    }
+
+    .portfolio-card:nth-child(3) .portfolio-image {
+      height: 250px;
+    }
+
+    .portfolio-image::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.22), transparent 45%);
+      opacity: 1;
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: end start;
+      background: linear-gradient(160deg, rgba(126, 200, 164, 0.78), rgba(45, 134, 83, 0.86));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: #ffffff;
+      text-align: left;
+      padding: 18px;
+      gap: 10px;
+    }
+
+    .portfolio-overlay h3 {
+      font-size: 1.05rem;
+      margin-bottom: 2px;
+      line-height: 1.25;
+    }
+
+    .portfolio-overlay span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .portfolio-overlay .btn {
+      margin-top: 4px;
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .portfolio-card:hover .portfolio-image {
+      transform: scale(1.06);
+      transition: transform 0.5s ease;
+    }
+
+    .portfolio-content {
+      padding: 14px 14px 18px;
+    }
+
+    .portfolio-content h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .portfolio-content span {
+      color: #2d8653;
+      font-size: 0.87rem;
+    }
+
+    .stats {
+      background:
+        radial-gradient(circle at 18% 12%, rgba(126, 200, 164, 0.16), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(45, 134, 83, 0.18), transparent 34%),
+        linear-gradient(125deg, #f0faf5, #ffffff 55%, #f5f5f5);
+      border-block: 1px solid rgba(45, 134, 83, 0.14);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: 22px 14px;
+      animation: slideUp 0.6s ease-out forwards;
+      opacity: 0;
+    }
+
+    .stat-card:nth-child(1) { animation-delay: 0.1s; }
+    .stat-card:nth-child(2) { animation-delay: 0.2s; }
+    .stat-card:nth-child(3) { animation-delay: 0.3s; }
+    .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .stat-number {
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 6px;
+      line-height: 1;
+      color: #1f5539;
+      text-shadow: 0 0 16px rgba(126, 200, 164, 0.32);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover .stat-number {
+      transform: scale(1.05);
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .about-text h2 {
+      font-size: clamp(1.8rem, 4vw, 2.9rem);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #1f3f30;
+    }
+
+    .check {
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.82rem;
+      background: linear-gradient(145deg, rgba(126,200,164,0.94), rgba(45,134,83,0.98));
+      box-shadow: 0 0 10px rgba(126, 200, 164, 0.6);
+    }
+
+    .about-3d {
+      position: relative;
+      height: min(470px, 62vw);
+      min-height: 290px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(45, 134, 83, 0.2);
+      background: linear-gradient(140deg, rgba(126,200,164,0.13), rgba(255,255,255,0.8));
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .testimonials-track-wrap {
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .testimonials-track {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      padding-block: 6px;
+    }
+
+    .testimonial-card {
+      width: min(380px, 86vw);
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid rgba(45, 134, 83, 0.22);
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .stars {
+      color: var(--warning);
+      text-shadow: none;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .testimonial-text {
+      color: #253d31;
+      margin-bottom: 13px;
+      min-height: 94px;
+    }
+
+    .client-meta {
+      color: #3f6853;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .result-card {
+      padding: 20px;
+      border-radius: 14px;
+      border: 1px solid rgba(45, 134, 83, 0.2);
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(31, 60, 44, 0.08);
+    }
+
+    .result-metric {
+      font-size: 1.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      color: #1f5d3d;
+      margin-bottom: 8px;
+    }
+
+    .result-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .result-note {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .appointment {
+      overflow: hidden;
+    }
+
+    .appointment .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .form-card {
+      width: min(860px, 100%);
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 36px);
+      border-radius: 12px;
+      border: 1px solid rgba(45, 134, 83, 0.36);
+      box-shadow: 0 0 18px rgba(126, 200, 164, 0.2), 0 0 34px rgba(45, 134, 83, 0.16);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.9rem;
+      color: #2b533f;
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: #ffffff;
+      color: #1a1a1a;
+      border: 1px solid rgba(45, 134, 83, 0.24);
+      border-radius: 10px;
+      padding: 12px 13px;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(45, 134, 83, 0.9);
+      box-shadow: 0 0 0 4px rgba(126, 200, 164, 0.24);
+    }
+
+    .meeting-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .meeting-option {
+      position: relative;
+    }
+
+    .meeting-option input {
+      position: absolute;
+      opacity: 0;
+      inset: 0;
+    }
+
+    .meeting-option label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      background: #f5f5f5;
+      border: 1px solid rgba(45, 134, 83, 0.2);
+      cursor: pointer;
+      min-height: 46px;
+    }
+
+    .meeting-option input:checked + label {
+      background: linear-gradient(140deg, rgba(126,200,164,0.35), rgba(45,134,83,0.26));
+      border-color: rgba(45, 134, 83, 0.72);
+      box-shadow: 0 0 0 3px rgba(126, 200, 164, 0.24);
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 8px;
+      min-height: 50px;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.75;
+      cursor: not-allowed;
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .form-message.success {
+      display: block;
+      background: #ecf9f1;
+      color: #1f5d3d;
+      border: 1px solid rgba(45, 134, 83, 0.35);
+    }
+
+    .form-message.error {
+      display: block;
+      background: #fff1f1;
+      color: #a12626;
+      border: 1px solid rgba(190, 70, 70, 0.35);
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .success-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(6px);
+      z-index: 1900;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .success-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .success-card {
+      width: min(520px, 92vw);
+      padding: 30px 24px;
+      text-align: center;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.98);
+      border: 1px solid rgba(45, 134, 83, 0.24);
+      box-shadow: 0 14px 34px rgba(45, 134, 83, 0.18);
+    }
+
+    .checkmark-wrap {
+      width: 78px;
+      height: 78px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.15);
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      display: grid;
+      place-items: center;
+      color: var(--success);
+      font-size: 2rem;
+      box-shadow: 0 0 22px rgba(34, 197, 94, 0.35);
+    }
+
+    .success-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.6rem;
+    }
+
+    .success-card p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    footer {
+      position: relative;
+      background: #1a3d2b;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 34px 0 18px;
+    }
+
+    .footer-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(126,200,164,0.95), rgba(45,134,83,0.95), transparent);
+      background-size: 220% 100%;
+      animation: lineMove 6s linear infinite;
+    }
+
+    @keyframes lineMove {
+      from { background-position: 0% 0; }
+      to { background-position: 220% 0; }
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    footer .logo {
+      color: #ffffff;
+      text-shadow: 0 0 12px rgba(126, 200, 164, 0.45);
+    }
+
+    .footer-col p,
+    .footer-col li,
+    .footer-col a {
+      color: #d7f0e2;
+      font-size: 0.92rem;
+      list-style: none;
+      margin-bottom: 7px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: #ffffff;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,0.34);
+      background: rgba(255,255,255,0.12);
+      transition: all 0.2s ease;
+      font-size: 0.92rem;
+    }
+
+    .social-link img {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
+    }
+
+    .social-link:hover {
+      background: var(--gradient);
+      border-color: transparent;
+      box-shadow: 0 0 16px rgba(126, 200, 164, 0.45);
+      transform: translateY(-3px);
+    }
+
+    .contact-list li {
+      margin-bottom: 8px;
+    }
+
+    .contact-list strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .footer-legal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 8px;
+      margin-bottom: 10px;
+    }
+
+    .footer-legal a {
+      color: #d7f0e2;
+      font-size: 0.84rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .footer-legal a:hover {
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 14px;
+      text-align: center;
+      color: #d7f0e2;
+      font-size: 0.88rem;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 1080px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .hero-grid,
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        justify-self: stretch;
+        max-width: 100%;
+      }
+
+      .hero-floating-card {
+        left: 12px;
+        bottom: 12px;
+      }
+
+      .hero {
+        padding-top: 104px;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .results-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 820px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 76px;
+        right: 14px;
+        width: min(330px, 90vw);
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(45,134,83,0.2);
+        backdrop-filter: blur(12px);
+        padding: 16px;
+        display: grid;
+        gap: 10px;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.25s ease;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-link {
+        padding: 8px 4px;
+      }
+
+      .nav-cta {
+        width: 100%;
+        margin-top: 3px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-strip-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meeting-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+    }
+
+    .floating-whatsapp:active {
+      transform: scale(0.95);
+    }
+
+    @media (max-width: 560px) {
+      .floating-whatsapp {
+        bottom: 16px;
+        right: 16px;
+        width: 54px;
+        height: 54px;
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      body {
+        cursor: auto;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .services-grid,
+      .stats-grid,
+      .results-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-loader" id="siteLoader">
+    <div class="loader-logo">Nexgrow Digital</div>
+  </div>
+
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a class="logo" href="#home">Nexgrow Digital</a>
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a class="nav-link" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+          <li><a class="btn btn-primary nav-cta" href="appointment.html?v=2">Book Free Strategy Call</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">Trusted Full-Service Growth Partner for Service Businesses</div>
+          <h1><span class="typing-target" id="typingTarget"></span></h1>
+          <p>From websites to marketing — we handle everything your business needs to dominate online.</p>
+          <div class="hero-actions">
+            <a href="appointment.html?v=2" class="btn btn-primary">Book Free Strategy Call</a>
+            <a href="#portfolio" class="btn btn-secondary">View Our Work</a>
+          </div>
+          <div class="hero-trust">
+            <span class="hero-trust-item">150+ Projects Delivered</span>
+            <span class="hero-trust-item">Results-Focused Strategy</span>
+            <span class="hero-trust-item">Transparent Weekly Reporting</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <img
+            class="hero-image"
+            id="heroImage"
+            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80"
+            alt="Nexgrow Digital team discussing growth strategy"
+            loading="eager"
+            onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80';"
+          />
+          <div class="hero-floating-card">
+            <span class="check-icon">✓</span>
+            <span>500+ Businesses Grown</span>
+          </div>
+        </div>
+      </div>
+      <a href="#services" class="scroll-down" aria-label="Scroll to next section"><span></span></a>
+    </section>
+
+    <section class="trust-strip">
+      <div class="container trust-strip-inner">
+        <div class="trust-strip-label">Trusted by growing businesses in:</div>
+        <div class="trust-strip-logos">
+          <span class="trust-logo">Home Services</span>
+          <span class="trust-logo">Healthcare</span>
+          <span class="trust-logo">Legal</span>
+          <span class="trust-logo">E-Commerce</span>
+          <span class="trust-logo">Real Estate</span>
+          <span class="trust-logo">Local Businesses</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2 class="section-title">What We Do</h2>
+        <p class="section-subtitle">Data-driven digital services designed to scale your visibility, conversions, and long-term business growth.</p>
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-subtitle">A curated selection of projects across design, growth, branding, and conversion-focused marketing campaigns.</p>
+        <div class="portfolio-controls" id="portfolioFilters"></div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+      </div>
+    </section>
+
+    <section class="section stats" id="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <article class="stat-card glass">
+            <div class="stat-number" data-target="150" data-suffix="+">0</div>
+            <div class="stat-label">Projects Completed</div>
+          </article>
+          <article class="stat-card glass">
+            <div class="stat-number" data-target="80" data-suffix="+">0</div>
+            <div class="stat-label">Happy Clients</div>
+          </article>
+          <article class="stat-card glass">
+            <div class="stat-number" data-target="8" data-suffix="+">0</div>
+            <div class="stat-label">Years Experience</div>
+          </article>
+          <article class="stat-card glass">
+            <div class="stat-number" data-target="25" data-suffix="+">0</div>
+            <div class="stat-label">Team Members</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="container">
+        <h2 class="section-title">Recent Client Wins</h2>
+        <p class="section-subtitle">Quick performance snapshots from campaigns and websites launched for service-based businesses.</p>
+        <div class="results-grid">
+          <article class="result-card reveal">
+            <div class="result-metric">+187%</div>
+            <h3 class="result-title">Organic Leads Growth</h3>
+            <p class="result-note">Local SEO and landing page optimization in 90 days.</p>
+          </article>
+          <article class="result-card reveal">
+            <div class="result-metric">3.4x</div>
+            <h3 class="result-title">Return on Ad Spend</h3>
+            <p class="result-note">Google + Meta ad funnel with call-focused creative strategy.</p>
+          </article>
+          <article class="result-card reveal">
+            <div class="result-metric">42%</div>
+            <h3 class="result-title">Lower Cost Per Lead</h3>
+            <p class="result-note">Conversion tracking cleanup and high-intent audience targeting.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-wrap">
+        <div class="about-text">
+          <h2>We Are <span class="gradient-text">Nexgrow Digital</span></h2>
+          <p>We are a full service digital agency helping businesses across the globe grow their online presence. From stunning websites to powerful marketing strategies, we deliver results that matter.</p>
+          <ul class="check-list">
+            <li><span class="check">✓</span>Result Driven Strategies</li>
+            <li><span class="check">✓</span>Transparent Communication</li>
+            <li><span class="check">✓</span>Affordable Pricing</li>
+            <li><span class="check">✓</span>Dedicated Support Team</li>
+          </ul>
+        </div>
+        <div class="about-3d">
+          <img
+            class="about-photo"
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80"
+            alt="Nexgrow Digital team collaborating in modern office"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Real client feedback from businesses we helped grow through modern websites and measurable marketing campaigns.</p>
+        <div class="testimonials-track-wrap">
+          <div class="testimonials-track" id="testimonialsTrack"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section appointment" id="appointment">
+      <div class="container">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-subtitle">Tell us about your project and we will get back to you within 24 hours.</p>
+        <div class="form-card glass">
+          <form id="appointmentForm" action="https://formspree.io/f/xkokdglz" method="POST">
+            <div class="form-grid">
+              <div class="field">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" required placeholder="Enter your full name" />
+              </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" required placeholder="Enter your email address" />
+              </div>
+              <div class="field">
+                <label for="whatsapp">WhatsApp Number</label>
+                <input id="whatsapp" name="whatsapp" required placeholder="Enter your WhatsApp number with country code" />
+              </div>
+              <div class="field">
+                <label for="service">Select Service Required</label>
+                <select id="service" name="service" required>
+                  <option value="" selected disabled>Select a service</option>
+                  <option>Website Design & Development</option>
+                  <option>Search Engine Optimization (SEO)</option>
+                  <option>Pay Per Click Advertising (PPC)</option>
+                  <option>Social Media Management</option>
+                  <option>Email Marketing</option>
+                  <option>E-Commerce Development</option>
+                  <option>Brand Identity & Logo Design</option>
+                  <option>Content Writing & Copywriting</option>
+                  <option>Video Editing & Reels</option>
+                  <option>CRM & Automation Setup</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field field-full">
+                <label for="details">Project Details</label>
+                <textarea id="details" name="details" required placeholder="Describe your project in detail. What are you looking for? What are your goals? Any specific requirements?"></textarea>
+              </div>
+              <div class="field field-full">
+                <label>Preferred Meeting Platform</label>
+                <div class="meeting-options">
+                  <div class="meeting-option">
+                    <input type="radio" id="meet" name="platform" value="Google Meet" required />
+                    <label for="meet">📹 Google Meet</label>
+                  </div>
+                  <div class="meeting-option">
+                    <input type="radio" id="phone" name="platform" value="Phone Call" />
+                    <label for="phone">📞 Phone Call</label>
+                  </div>
+                  <div class="meeting-option">
+                    <input type="radio" id="wa" name="platform" value="WhatsApp Message" />
+                    <label for="wa">💬 WhatsApp Message</label>
+                  </div>
+                  <div class="meeting-option">
+                    <input type="radio" id="mail" name="platform" value="Email" />
+                    <label for="mail">📧 Email</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary submit-btn" type="submit" id="submitBtn">
+              <span class="btn-text">Book Free Strategy Call</span>
+              <span class="spinner" id="submitSpinner"></span>
+            </button>
+            <p id="indexFormMessage" class="form-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-line"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a class="logo" href="#home">Nexgrow Digital</a>
+          <p style="margin-top:10px;">Modern web experiences and growth-focused marketing systems built to help your business scale faster.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#results">Results</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="appointment.html?v=2">Book Free Strategy Call</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li>Web Development</li>
+            <li>SEO</li>
+            <li>PPC</li>
+            <li>Social Media Marketing</li>
+            <li>Automation Setup</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> contact@nexgrowdigital.com</li>
+                            <li><strong>Whatsapp:</strong> +1 (365) 276-8648</li>
+            <li><strong>Hours:</strong> Mon-Sat, 9:00 AM - 7:00 PM</li>
+          </ul>
+          <div class="socials">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/facebook.svg" alt="Facebook icon" loading="lazy" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram icon" loading="lazy" />
+            </a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn icon" loading="lazy" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/x.svg" alt="X icon" loading="lazy" />
+            </a>
+            <a href="https://wa.me/13652768648" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="WhatsApp">
+              <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp icon" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+      <div class="copyright">© 2025 Nexgrow Digital. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <div class="success-modal" id="successModal">
+    <div class="success-card">
+      <div class="checkmark-wrap" id="successCheck">✓</div>
+      <h3>Appointment Booked Successfully!</h3>
+      <p>Thank you! We have received your request. Our team will contact you within 24 hours on your preferred platform.</p>
+      <button class="btn btn-primary" id="closeSuccessModal">Close</button>
+    </div>
+  </div>
+
+  <a href="https://wa.me/13652768648" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" style="width: 32px; height: 32px; filter: brightness(0) invert(1);" />
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const services = [
+      { icon: "WEB", title: "Website Design & Development", desc: "High-converting websites built for performance, branding, and growth." },
+      { icon: "SEO", title: "Search Engine Optimization (SEO)", desc: "Rank higher and attract quality traffic with strategic SEO systems." },
+      { icon: "PPC", title: "Pay Per Click Advertising (PPC)", desc: "Precision ad campaigns optimized for ROI and lead quality." },
+      { icon: "SMM", title: "Social Media Management", desc: "Consistent social presence that engages audiences and builds trust." },
+      { icon: "EML", title: "Email Marketing", desc: "Automated email funnels that nurture leads and boost conversions." },
+      { icon: "ECO", title: "E-Commerce Development", desc: "Scalable e-commerce platforms designed to increase online sales." },
+      { icon: "BRD", title: "Brand Identity & Logo Design", desc: "Memorable visual identity systems that differentiate your business." },
+      { icon: "CPY", title: "Content Writing & Copywriting", desc: "Persuasive content that connects, ranks, and converts visitors." },
+      { icon: "VID", title: "Video Editing & Reels", desc: "Attention-grabbing short-form videos tailored for social growth." },
+      { icon: "CRM", title: "CRM & Automation Setup", desc: "Automate client journeys and streamline operations end-to-end." }
+    ];
+
+    const portfolioItems = [
+      { title: "Velocity Roofing Website", category: "Web Design", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" },
+      { title: "Apex Dental Website", category: "Web Design", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" },
+      { title: "LawFirm UX Redesign", category: "Web Design", image: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?w=1200" },
+      { title: "FinTech Landing Site", category: "Web Design", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200" },
+      { title: "Salon SEO Growth Campaign", category: "SEO", image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=1200" },
+      { title: "HVAC Local SEO Sprint", category: "SEO", image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200" },
+      { title: "Chiropractic SEO Boost", category: "SEO", image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200" },
+      { title: "Auto Repair SEO Pack", category: "SEO", image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" },
+      { title: "Zenith Brand Revamp", category: "Branding", image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200" },
+      { title: "Nova Cafe Identity", category: "Branding", image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1200" },
+      { title: "Urban Gym Branding", category: "Branding", image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200" },
+      { title: "Boutique Logo System", category: "Branding", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?w=1200" },
+      { title: "UrbanStyle Online Store", category: "E-Commerce", image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200" },
+      { title: "Beauty Store Migration", category: "E-Commerce", image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200" },
+      { title: "Pet Supplies Shop", category: "E-Commerce", image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200" },
+      { title: "Fashion Checkout Revamp", category: "E-Commerce", image: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=1200" },
+      { title: "Realtor Social Funnel", category: "Social Media", image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1200" },
+      { title: "Restaurant Reels Campaign", category: "Social Media", image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200" },
+      { title: "Clinic Lead Ads Creative", category: "Social Media", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200" },
+      { title: "Auto Shop Content Plan", category: "Social Media", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1200" },
+      { title: "FitLife Landing Page", category: "Landing Page", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200" },
+      { title: "Webinar Lead Page", category: "Landing Page", image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" },
+      { title: "Dental Offer Funnel Page", category: "Landing Page", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200" },
+      { title: "Real Estate Offer Page", category: "Landing Page", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200" }
+    ];
+
+    const testimonials = [
+      { text: "Nexgrow built our plumbing website in just 7 days. We started getting calls within weeks!", name: "Mike Davis", business: "Davis Plumbing TX", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" },
+      { text: "Our Google ranking went from page 5 to page 1 in just 2 months. Absolutely incredible results!", name: "Sarah Johnson", business: "Johnson Salon NY", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" },
+      { text: "Best investment we made for our restaurant. Online orders increased by 40% after our new website!", name: "Robert Martinez", business: "Casa Martinez Restaurant FL", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" },
+      { text: "They managed our Facebook ads and we tripled our leads in just one month!", name: "Emily Clark", business: "Clark Real Estate CA", photo: "https://images.unsplash.com/photo-1544725176-7c40e5a2c9f9?auto=format&fit=crop&w=200&q=80" },
+      { text: "Professional, fast and affordable. Nexgrow is the only agency we will ever use!", name: "James Wilson", business: "Wilson Auto Repair TX", photo: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?auto=format&fit=crop&w=200&q=80" }
+    ];
+
+    const servicesGrid = document.getElementById("servicesGrid");
+    const portfolioGrid = document.getElementById("portfolioGrid");
+    const portfolioFilters = document.getElementById("portfolioFilters");
+    const testimonialsTrack = document.getElementById("testimonialsTrack");
+
+    function buildServices() {
+      services.forEach((service) => {
+        const card = document.createElement("article");
+        card.className = "service-card glass reveal";
+        card.innerHTML = `
+          <div class="service-icon">${service.icon}</div>
+          <h3>${service.title}</h3>
+          <p>${service.desc}</p>
+        `;
+        servicesGrid.appendChild(card);
+      });
+    }
+
+    function buildPortfolio() {
+      const categories = ["All", ...new Set(portfolioItems.map((item) => item.category))];
+      categories.forEach((cat, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "filter-btn" + (idx === 0 ? " active" : "");
+        btn.dataset.filter = cat;
+        btn.textContent = cat;
+        portfolioFilters.appendChild(btn);
+      });
+
+      renderPortfolio("All");
+
+      portfolioFilters.addEventListener("click", (e) => {
+        const btn = e.target.closest(".filter-btn");
+        if (!btn) return;
+        [...portfolioFilters.children].forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        renderPortfolio(btn.dataset.filter);
+      });
+    }
+
+    let currentFilter = "All";
+    let mobileExpandedItems = new Set();
+
+    function renderPortfolio(filter) {
+      currentFilter = filter;
+      portfolioGrid.innerHTML = "";
+      mobileExpandedItems.clear();
+      
+      const filtered = filter === "All" ? portfolioItems : portfolioItems.filter((item) => item.category === filter);
+      const isMobile = window.innerWidth < 768;
+      const itemsToShow = filter === "All" && isMobile ? 4 : filtered.length;
+      
+      filtered.forEach((item, idx) => {
+        const card = document.createElement("article");
+        card.className = "portfolio-card reveal";
+        if (filter === "All" && isMobile && idx >= 4) {
+          card.style.display = "none";
+          card.dataset.hidden = "true";
+        }
+        card.innerHTML = `
+          <div class="portfolio-image" style="background-image: url('${item.image}');">
+            <div class="portfolio-overlay">
+              <h3>${item.title}</h3>
+              <span>${item.category}</span>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <h3>${item.title}</h3>
+            <span>${item.category}</span>
+          </div>
+        `;
+        portfolioGrid.appendChild(card);
+      });
+
+      // Add Load More button for mobile "All" filter
+      if (filter === "All" && isMobile && filtered.length > 4) {
+        const loadMoreBtn = document.createElement("button");
+        loadMoreBtn.className = "btn btn-secondary load-more-btn";
+        loadMoreBtn.textContent = "Load More";
+        loadMoreBtn.style.marginTop = "24px";
+        loadMoreBtn.style.width = "100%";
+        loadMoreBtn.addEventListener("click", () => {
+          const hiddenCards = portfolioGrid.querySelectorAll("[data-hidden='true']");
+          hiddenCards.forEach((card) => {
+            card.style.display = "block";
+            card.removeAttribute("data-hidden");
+          });
+          loadMoreBtn.remove();
+        });
+        portfolioGrid.parentElement.appendChild(loadMoreBtn);
+      }
+
+      gsap.fromTo(
+        ".portfolio-card",
+        { y: 30, opacity: 0, scale: 0.97 },
+        { y: 0, opacity: 1, scale: 1, duration: 0.5, stagger: 0.08, ease: "power2.out" }
+      );
+    }
+
+    function buildTestimonials() {
+      const extended = [...testimonials, ...testimonials];
+      extended.forEach((t) => {
+        const card = document.createElement("article");
+        card.className = "testimonial-card glass";
+        card.innerHTML = `
+          <div class="avatar"><img src="${t.photo}" alt="${t.name}" loading="lazy" referrerpolicy="no-referrer" /></div>
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"${t.text}"</p>
+          <div class="client-meta">— ${t.name}, ${t.business}</div>
+        `;
+        testimonialsTrack.appendChild(card);
+      });
+
+      gsap.to(testimonialsTrack, {
+        x: "-50%",
+        duration: 44,
+        ease: "none",
+        repeat: -1
+      });
+    }
+
+    function setupTyping() {
+      const text = "We Grow Businesses Digitally";
+      const target = document.getElementById("typingTarget");
+      target.textContent = text;
+    }
+
+    function setupNavbar() {
+      const navbar = document.getElementById("navbar");
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      const updateNavbar = () => navbar.classList.toggle("scrolled", window.scrollY > 16);
+      window.addEventListener("scroll", updateNavbar);
+      updateNavbar();
+
+      menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+
+      navLinks.addEventListener("click", (e) => {
+        if (e.target.classList.contains("nav-link") || e.target.classList.contains("nav-cta")) {
+          navLinks.classList.remove("open");
+        }
+      });
+    }
+
+    function setupScrollAnimations() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+      gsap.utils.toArray(".reveal, .section-title, .section-subtitle, .about-text, .form-card, .stat-card").forEach((el) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 34 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 86%"
+            }
+          }
+        );
+      });
+
+      // Fonts/images can shift layout after refresh; recalculate triggers so
+      // reveal animations don't leave some cards stuck at opacity: 0.
+      requestAnimationFrame(() => {
+        if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh();
+      });
+      setTimeout(() => {
+        if (typeof ScrollTrigger !== "undefined") ScrollTrigger.refresh(true);
+      }, 600);
+    }
+
+    function setupDeferredPortfolio() {
+      let didBuild = false;
+      const buildOnce = () => {
+        if (didBuild) return;
+        didBuild = true;
+        buildPortfolio();
+      };
+
+      const section = document.getElementById("portfolio");
+      if (!section || !("IntersectionObserver" in window)) {
+        buildOnce();
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((entry) => entry.isIntersecting)) {
+            buildOnce();
+            observer.disconnect();
+          }
+        },
+        { rootMargin: "300px 0px" }
+      );
+
+      observer.observe(section);
+      setTimeout(buildOnce, 2000);
+    }
+
+    function setupStatsCounter() {
+      const stats = document.querySelectorAll(".stat-number");
+      stats.forEach((stat) => {
+        const target = parseInt(stat.dataset.target, 10);
+        const suffix = stat.dataset.suffix || "";
+        ScrollTrigger.create({
+          trigger: stat,
+          start: "top 85%",
+          once: true,
+          onEnter: () => {
+            const obj = { val: 0 };
+            gsap.to(obj, {
+              val: target,
+              duration: 2,
+              ease: "power2.out",
+              onUpdate: () => {
+                stat.textContent = Math.floor(obj.val) + suffix;
+              }
+            });
+          }
+        });
+      });
+    }
+
+    function setupForm() {
+      const form = document.getElementById("appointmentForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const spinner = document.getElementById("submitSpinner");
+      const text = submitBtn.querySelector(".btn-text");
+      const modal = document.getElementById("successModal");
+      const closeBtn = document.getElementById("closeSuccessModal");
+      const check = document.getElementById("successCheck");
+      const formMessage = document.getElementById("indexFormMessage");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        formMessage.className = "form-message";
+        formMessage.textContent = "";
+        submitBtn.disabled = true;
+        spinner.style.display = "inline-block";
+        text.textContent = "Submitting...";
+
+        gsap.to(submitBtn, { scale: 0.98, duration: 0.1, yoyo: true, repeat: 1 });
+
+        const formData = new FormData(form);
+        fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        })
+          .then((response) => {
+            if (!response.ok) throw new Error("Submission failed");
+            submitBtn.disabled = false;
+            spinner.style.display = "none";
+            text.textContent = "Book Free Strategy Call";
+            form.reset();
+            formMessage.className = "form-message success";
+            formMessage.textContent = "Thank you! Your appointment request has been sent.";
+            modal.classList.add("open");
+            gsap.fromTo(check, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(1.8)" });
+          })
+          .catch(() => {
+            submitBtn.disabled = false;
+            spinner.style.display = "none";
+            text.textContent = "Book Free Strategy Call";
+            formMessage.className = "form-message error";
+            formMessage.textContent = "Something went wrong. Please try again.";
+          });
+      });
+
+      closeBtn.addEventListener("click", () => modal.classList.remove("open"));
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.classList.remove("open");
+      });
+    }
+
+    function setupLoader() {
+      const loader = document.getElementById("siteLoader");
+      window.addEventListener("load", () => {
+        setTimeout(() => loader.classList.add("hidden"), 900);
+      });
+    }
+
+    function initHeroAnimation() {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      gsap.from(".hero-badge", { y: -14, opacity: 0, duration: 0.7, ease: "power2.out", delay: 0.25 });
+      gsap.from(".hero p", { y: 18, opacity: 0, duration: 0.8, ease: "power2.out", delay: 0.45 });
+      gsap.from(".hero-actions .btn", { y: 14, opacity: 0, stagger: 0.08, duration: 0.55, ease: "power2.out", delay: 0.6 });
+      gsap.from(".hero-trust-item", { y: 10, opacity: 0, stagger: 0.08, duration: 0.5, ease: "power2.out", delay: 0.82 });
+    }
+
+    function init() {
+      buildServices();
+      setupDeferredPortfolio();
+      buildTestimonials();
+      setupTyping();
+      setupNavbar();
+      setupScrollAnimations();
+      setupStatsCounter();
+      setupForm();
+      setupLoader();
+      initHeroAnimation();
+    }
+
+    init();
+  </script>
+</body>
+</html>
