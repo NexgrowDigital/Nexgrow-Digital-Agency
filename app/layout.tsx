@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'Nexgrow Digital',
   description: 'Modern web experiences and growth-focused marketing systems built to help your business scale faster.',
   icons: {
-    icon: '/favicon-32x32.png',
-    shortcut: '/favicon-32x32.png',
-    apple: '/favicon-32x32.png',
+    icon: '/facon-32x32.ico',
+    shortcut: '/facon-32x32.ico',
+    apple: '/facon-32x32.ico',
   }
 }
 
